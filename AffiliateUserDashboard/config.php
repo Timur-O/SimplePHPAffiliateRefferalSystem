@@ -4,6 +4,10 @@
   // Root of the affiliate panel files
   // if in a folder called refferal or affiliates simply put "/refferal" or "/affiliates". if not in a folder then simply put "".
   $rootOfFiles = "";
+  // The currency you are paying your affiliate in
+  $currency = 'USD';
+  // The website your affiliates are reffering users to
+  $websiteURL = 'https://www.yourwebsite.com/'; // IMPORTANT - The trailing slash must be included
   
   // Add your database information for the login system
   $servername = "sql.yourdomain.tld";
@@ -11,6 +15,10 @@
   $password = "password";
   $dbname = "yourdatabase"; // Database which contains admin login info
   $userTableName = "yourtable"; // Name of table containing affiliate program users login info
+  $affiliateTableName = "affiliates"; // Name of the table containing information about each affiliate (ie clicks, conversions, balance)
+  $conversionsTableName = "conversions"; // Name of the table containing information about each conversion (ie singup)
+  $payoutsTableName = "payouts"; // Name of the table containing information about payouts to affiliates
+  $assetsPath = "images/affiliate_assets"; // The path to the assets (ie banners) which are provided to the affiliates to promote your product
   $emailColumn = "email"; // Name of column containing emails
   $hashPasswordColumn = "password"; // Name of column containing passwords
   $primaryKeyColumn = "id"; // Name of column containing the primary key/unique identifier for each row (will be used for affiliateID)

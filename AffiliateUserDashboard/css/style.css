@@ -26,19 +26,6 @@ body {
   margin-left: 2%; 
 }
 
-.feed-item-title {
-  font-size: 1.25rem !important;
-}
-
-.feed-title {
-  font-size: 1.3rem !important;
-}
-
-.rssHeight {
-  height: 473px;
-  overflow-y: scroll;
-}
-
 footer {
   padding-left: 300px;
   background-color: #f1f1f13d;
@@ -94,18 +81,6 @@ footer {
   overflow-x:auto;
 }
 
-#monitor_table {
-  font-size: 1.2rem;
-}
-
-.analyticsRangeButton {
-  margin-right: 1%;
-  margin-bottom: 1%;
-}
-
-.moreAccountsInfoRow {
-  display: none;
-}
 
 @media only screen and (max-width: 993px) {
   .main {
@@ -119,8 +94,5 @@ footer {
   }
   .rowtoppadded {
     padding-top: 0%;
-  }
-  #overalluptimeheader {
-    margin-top: 0 !important;
   }
 }

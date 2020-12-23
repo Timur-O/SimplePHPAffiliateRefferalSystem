@@ -5,7 +5,7 @@ session_start();
 <html lang="en" dir="ltr">
   <head>
     <?php include 'head.php';?>
-    <title>Manage Users - Admin Panel</title>
+    <title>Assets - Affiliate Panel</title>
   </head>
   <body>
     <!-- Include the Nav into the page -->
@@ -13,49 +13,6 @@ session_start();
     <div class="main">
       <!-- Button to show/hide menu -->
       <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      
-      <div class="row rowtoppadded2">
-        <div class="borderedbox col s10 offset-s1">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s9 offset-s1">
-                <input id="icon_prefix2" placeholder="Search users..." class="validate"></input>
-              </div>
-            </div>
-            
-            <div class="row">
-              <div class="col s10 offset-s1">
-                <label>Search by...</label>
-              </div>
-              <div class="col s10 offset-s1">
-                  <label class="padright">
-                    <input name="searchoptions" type="radio" checked />
-                    <span>Name</span>
-                  </label>
-                  <label class="padright">
-                    <input name="searchoptions" type="radio" />
-                    <span>Email</span>
-                  </label>
-                  <label class="padright">
-                    <input name="searchoptions" type="radio"  />
-                    <span>ClientID</span>
-                  </label>
-              </div>
-            </div>
-            
-            <div class="row">            
-              <button class="btn waves-effect waves-light col s2 offset-s5" type="submit" name="action">Search
-                <i class="material-icons right">search</i>
-              </button>
-            </div>
-          </form>
-        </div>
-        
-      </div>
-      
-      <div class="row">
-        
-      </div>
       
       <div class="row respon-table">
         <table id="userstable" class="col s10 offset-s1 centered">

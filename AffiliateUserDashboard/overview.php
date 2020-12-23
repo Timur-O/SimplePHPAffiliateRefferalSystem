@@ -17,9 +17,11 @@ session_start();
       <?php
         include 'config.php';
         
-        $sql = "SELECT COUNT(*) as 'num' FROM `{$clientTableName}`";
+        $sql = "SELECT `clicks`, `conversions`, `commissionBalance` FROM `{$affiliateTableName}`";
         $result = $conn->query($sql)->fetch_assoc();
-        $numberOfClients = $result['num'];
+        $numberOfClicks = $result['clicks'];
+        $numberOfConversions = $result['conversions'];
+        $currentCommissionValue = $result['commissionBalance'];
         
       ?>
 
@@ -27,47 +29,35 @@ session_start();
         <div class="col m4 s12">
           <div class="card">
             <div class="card-content">
-              <span class="card-title">Total Users</span>
-              <h5><?php echo $numberOfClients; ?></h5><p>Registered Users</p> <!-- Should be done with database -->
+              <span class="card-title">Total Clicks</span>
+              <h5><?php echo $numberOfClicks; ?></h5><p> Clicks</p>
             </div>
           </div>
         </div>
         <div class="col m4 s12">
           <div class="card">
             <div class="card-content">
-              <span class="card-title">7 Day User Total</span>
-              <h5><?php echo $analyticsValueusers;?></h5><p>Users</p>
+              <span class="card-title">Total Conversions</span>
+              <h5><?php echo $numberOfConversions;?></h5><p> Conversions</p>
             </div>
           </div>
         </div>
         <div class="col m4 s12">
-          <a class="card-link" href="uptime.php">
-            <div id="uptimecard" class="card green">
-              <div class="card-content">
-                <span class="card-title">Service Status</span>
-                <h5>0</h5><p>Services Down</p>
-              </div>
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Commission Amount</span>
+              <h5><?php echo $currentCommissionValue;?></h5><p> <?php echo $currency?></p>
             </div>
-          </a>
+          </div>
         </div>
       </div>
 
       <div class="row">
-        <div class="col m4 s12 twitterFeed">
+        <div class="col s12">
           <div class="card">
             <div class="card-content">
-              <span class="card-title">Twitter Feed</span>
-              <a class="twitter-timeline" data-height="473" href="https://twitter.com/<?php echo $twitterHandle; ?>?ref_src=twsrc%5Etfw">Tweets by <?php echo $twitterHandle; ?></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
-          </div>
-        </div>
-        <div class="col m4 s12 rssFeed">
-          <div class="card">
-            <div class="card-content">
-              <span class="card-title">RSS Feed</span>
-              <div class="rssHeight">
-                <script src="<?php echo $rssFeed;?>"></script>
-              </div>
+              <span class="card-title">Your Refferal Link</span>
+                <input type="text" disabled value="<?php echo $websiteURL . '?ref=' . $_SESSION['userRefCode']; ?>">
             </div>
           </div>
         </div>
