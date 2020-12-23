@@ -1,0 +1,2 @@
+# disable hotlink protection to allow affiliates to use your images
+RewriteEngine off
