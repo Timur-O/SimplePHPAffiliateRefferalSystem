@@ -16,7 +16,8 @@ A template for a affiliate/refferal system built with PHP and Materialize. There
 ## Getting Started
 ---
 1. The User Dashboard:
-    1. The Database:
+    1. The Files - I recommend putting the user dashboard files into the root of the affiliates folder. ie. website.tld/affiliate = user dashboard index page
+    2. The Database:
         1. Create the following tables (you can choose different names, but change these in config.php)
             - "Affiliate" table with the following columns:
                 - affiliateID - INT (Foreign Key with the primary key from the table containing login information)
@@ -34,13 +35,13 @@ A template for a affiliate/refferal system built with PHP and Materialize. There
                 - affiliate - INT (foreign key with affiliateID from Affiliates table)
                 - date - DATE
                 - amount - FLOAT
-    2. Update the config.php file
+    3. Update the config.php file
         1. Set the companyName variable to change the value in the footer
         2. Change rootOfFiles variable if the files are not in the root (ie htdocs or www folder)
         3. Change the currency variable to the currency you will be paying your affiliates in
         4. Set the website URL variable to the URL of the website your affiliates will be referring people to. This will make their referral URL to website.tld/?ref=XXXX
         5. Add your database information, including the information of the tables you created in step one
-    3. Upload a favicon.png and logo.png into the images folder to change the favicon and the logo in the nav menu respectivley
+    4. Upload a favicon.png and logo.png into the images folder to change the favicon and the logo in the nav menu respectivley
 
 2. The Admin Dashboard:
     COMING SOON

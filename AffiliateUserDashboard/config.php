@@ -18,7 +18,7 @@
   $affiliateTableName = "affiliates"; // Name of the table containing information about each affiliate (ie clicks, conversions, balance)
   $conversionsTableName = "conversions"; // Name of the table containing information about each conversion (ie singup)
   $payoutsTableName = "payouts"; // Name of the table containing information about payouts to affiliates
-  $assetsPath = "images/affiliate_assets"; // The path to the assets (ie banners) which are provided to the affiliates to promote your product
+  $assetsPath = "images/affiliate_assets"; // The path to the assets (ie banners) which are provided to the affiliates to promote your product. ALL IMAGES MUST BE BE OF TYPE .webp
   $emailColumn = "email"; // Name of column containing emails
   $hashPasswordColumn = "password"; // Name of column containing passwords
   $primaryKeyColumn = "id"; // Name of column containing the primary key/unique identifier for each row (will be used for affiliateID)
