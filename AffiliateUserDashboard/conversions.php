@@ -1,16 +1,5 @@
 <?php
 session_start();
-
-include 'loginCheck.php';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (isset($_POST['connectID'])) {
-    $_SESSION['user'] = $_POST['connectID'];
-    $_SESSION['connectedByAdmin'] = true;
-    //Redirect to Dashbaord
-    header("Location: https://ultifreehosting.com/dashboard.php"); die();
-  }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -26,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       
       <?php
-        include 'dbInfo.php';
+        include 'config.php';
         
         $sql = "SELECT COUNT(*) as 'num' FROM `{$conversionsTableName}` WHERE `affiliate` = '{$_SESSION['userRefCode']}'";
         $result = $conn->query($sql)->fetch_assoc();

@@ -67,6 +67,7 @@ include 'config.php';
                   $primaryKey = $result[$primaryKeyColumn];
 
                   $_SESSION['userRefCode'] = $primaryKey;
+                  $_SESSION['email'] = $email;
 
                   //Redirect
                   header("Location: overview.php"); die();

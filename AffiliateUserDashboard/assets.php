@@ -22,9 +22,10 @@ session_start();
         if (sizeof($images) == 0) {
           echo '<p class="red-text center">No assets available yet. Contact the support of ' . $companyName . '</p>';
         }
+        $count = 0;
         foreach($images as $image) {
-          echo '<div class="col">';
-            echo '<div class="card fit-content">';
+          echo '<div class="col s12 m6">';
+            echo '<div class="card">';
               echo'<div class="card-image">';
                 echo '<img class="assetImage" src="' . $image . '" />';
 
