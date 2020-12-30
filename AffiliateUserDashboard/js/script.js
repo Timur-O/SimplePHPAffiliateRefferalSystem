@@ -3,7 +3,7 @@ $(document).ready(function(){
   $('.sidenav').sidenav();
 
   // Fix for the footer
-  if (document.location.pathname != '/') {
+  if (document.location.pathname != rootOfFiles) {
     var currPage = document.location.pathname.match(/[^\/]+$/)[0];
   } else {
     $('footer').attr('class', 'footerlogin');

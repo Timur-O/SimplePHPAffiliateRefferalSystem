@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   echo "</tr>";
                 }
               } else {
-                echo '<td colspan="2"><p class="red-text">No conversions yet. Visit the <a href="assets.php">assets</a></p> page ot get started.</td>';
+                echo '<td colspan="2"><p class="red-text">No conversions yet. Visit the <a href="assets.php">assets</a> page to get started.</p></td>';
               }
             ?>
             <tr class="paginator">
@@ -82,38 +82,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     if (isset($_GET['page'])) {
                       $pageNum = $_GET['page'];
                       if ($pageNum > 2) {
-                        echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', ($pageNum - 1)) . '"><i class="material-icons">chevron_left</i></a></li>';
-                        echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', ($pageNum - 2)) . '">' . ($pageNum - 2) . '</a></li>';
-                        echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', ($pageNum - 1)) . '">' . ($pageNum - 1) . '</a></li>';
-                        echo '<li class="active"><a href="manageusers.php?' . addQueryToURL('page', ($pageNum)) . '">' . $pageNum . '</a></li>';
-                        echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', ($pageNum + 1)) . '">' . ($pageNum + 1) . '</a></li>';
-                        echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', ($pageNum + 2)) . '">' . ($pageNum + 2) . '</a></li>';
-                        echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', ($pageNum + 1)) . '"><i class="material-icons">chevron_right</i></a></li>';
+                        echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', ($pageNum - 1)) . '"><i class="material-icons">chevron_left</i></a></li>';
+                        echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', ($pageNum - 2)) . '">' . ($pageNum - 2) . '</a></li>';
+                        echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', ($pageNum - 1)) . '">' . ($pageNum - 1) . '</a></li>';
+                        echo '<li class="active"><a href="conversions.php?' . addQueryToURL('page', ($pageNum)) . '">' . $pageNum . '</a></li>';
+                        echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', ($pageNum + 1)) . '">' . ($pageNum + 1) . '</a></li>';
+                        echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', ($pageNum + 2)) . '">' . ($pageNum + 2) . '</a></li>';
+                        echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', ($pageNum + 1)) . '"><i class="material-icons">chevron_right</i></a></li>';
                       } else if ($pageNum == 2) {
-                        echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', 1) . '"><i class="material-icons">chevron_left</i></a></li>';
-                        echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', 1) . '">1</a></li>';
-                        echo '<li class="active"><a href="manageusers.php?' . addQueryToURL('page', 2) . '">2</a></li>';
-                        echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', 3) . '">3</a></li>';
-                        echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', 4) . '">4</a></li>';
-                        echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', 5) . '">5</a></li>';
-                        echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', 3) . '"><i class="material-icons">chevron_right</i></a></li>';
+                        echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', 1) . '"><i class="material-icons">chevron_left</i></a></li>';
+                        echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', 1) . '">1</a></li>';
+                        echo '<li class="active"><a href="conversions.php?' . addQueryToURL('page', 2) . '">2</a></li>';
+                        echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', 3) . '">3</a></li>';
+                        echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', 4) . '">4</a></li>';
+                        echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', 5) . '">5</a></li>';
+                        echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', 3) . '"><i class="material-icons">chevron_right</i></a></li>';
                       } else {
                         echo '<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>';
-                        echo '<li class="active"><a href="manageusers.php?' . addQueryToURL('page', 1) . '">1</a></li>';
-                        echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', 2) . '">2</a></li>';
-                        echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', 3) . '">3</a></li>';
-                        echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', 4) . '">4</a></li>';
-                        echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', 5) . '">5</a></li>';
-                        echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', 2) . '"><i class="material-icons">chevron_right</i></a></li>';
+                        echo '<li class="active"><a href="conversions.php?' . addQueryToURL('page', 1) . '">1</a></li>';
+                        echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', 2) . '">2</a></li>';
+                        echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', 3) . '">3</a></li>';
+                        echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', 4) . '">4</a></li>';
+                        echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', 5) . '">5</a></li>';
+                        echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', 2) . '"><i class="material-icons">chevron_right</i></a></li>';
                       }
                     } else {
                       echo '<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>';
-                      echo '<li class="active"><a href="manageusers.php?' . addQueryToURL('page', 1) . '">1</a></li>';
-                      echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', 2) . '">2</a></li>';
-                      echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', 3) . '">3</a></li>';
-                      echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', 4) . '">4</a></li>';
-                      echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', 5) . '">5</a></li>';
-                      echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', 2) . '"><i class="material-icons">chevron_right</i></a></li>';
+                      echo '<li class="active"><a href="conversions.php?' . addQueryToURL('page', 1) . '">1</a></li>';
+                      echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', 2) . '">2</a></li>';
+                      echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', 3) . '">3</a></li>';
+                      echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', 4) . '">4</a></li>';
+                      echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', 5) . '">5</a></li>';
+                      echo '<li class="waves-effect"><a href="conversions.php?' . addQueryToURL('page', 2) . '"><i class="material-icons">chevron_right</i></a></li>';
                     }
                     function addQueryToURL($query, $queryValue) {
                       $url = "https://admin.ultifreehosting.com" . $_SERVER['REQUEST_URI'];

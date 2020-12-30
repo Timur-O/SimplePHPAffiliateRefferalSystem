@@ -73,6 +73,13 @@ footer {
   text-decoration: none;
 }
 
+.assetImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: unset !important;
+}
+
 .footer {
   margin-top: 2%;
 }

@@ -23,6 +23,17 @@ session_start();
         $numberOfConversions = $result['conversions'];
         $currentCommissionValue = $result['commissionBalance'];
         
+        if (is_null($result)) {
+          $sql = "INSERT INTO  `{$affiliateTableName}` (`affiliateID`, `clicks`, `conversions`, `commissionBalance`) VALUES ({$_SESSION['userRefCode']}, 0, 0, 0)";
+          $conn->query($sql);
+
+          $sql = "SELECT `clicks`, `conversions`, `commissionBalance` FROM `{$affiliateTableName}`";
+          $result = $conn->query($sql)->fetch_assoc();
+          $numberOfClicks = $result['clicks'];
+          $numberOfConversions = $result['conversions'];
+          $currentCommissionValue = $result['commissionBalance'];
+        }
+        
       ?>
 
       <div class="row rowtoppadded2">

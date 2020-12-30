@@ -18,22 +18,22 @@ session_start();
       <?php
         include 'config.php';
 
-        $images = glob($assetsPath . "*.webp");
+        $images = glob($assetsPath . "/*.webp");
         if (sizeof($images) == 0) {
-          echo '<p class="red-text">No assets available yet. Contact the support of ' . $companyName . '</p>';
+          echo '<p class="red-text center">No assets available yet. Contact the support of ' . $companyName . '</p>';
         }
         foreach($images as $image) {
-          echo '<div class="col s12 m6">';
-            echo '<div class="card">';
+          echo '<div class="col">';
+            echo '<div class="card fit-content">';
               echo'<div class="card-image">';
-                echo '<img src="' . $image . '" />';
+                echo '<img class="assetImage" src="' . $image . '" />';
 
                 list($width, $height) = getimagesize($image);
 
-                echo '<span class="card-title">' . $width . 'x' . $height . '</span>';
               echo '</div>';
               echo '<div class="card-content">';
-                echo '<input disabled value="//' . $_SERVER['HTTP_HOST'] . '/' . $image . '">';
+                echo '<span class="card-title">' . $width . 'x' . $height . '</span>';
+                echo '<input class="imageURL" readonly value="//' . $_SERVER['HTTP_HOST'] . '/' . $image . '">';
               echo '</div>';
             echo '</div>';
           echo '</div>';
