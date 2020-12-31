@@ -62,16 +62,16 @@ session_start();
                     } else {
                       echo "<td>Pending Approval</td>";
                     }
-                  echo "</tr>";
-                  echo "<tr>";
-                    echo '<form action="changeConversionStatus.php" method="POST">';
-                    echo '<input hidden name="conversionID" type="text" value="' . $conversionID .'">';
-                    echo '<button class="btn waves-effect waves-light" type="submit" name="approveConversion">Approve Conversion</button>';
-                    echo '</form>';
-                    echo '<form action="changeConversionStatus.php" method="POST">';
-                    echo '<input hidden name="conversionID" type="text" value="' . $conversionID .'">';
-                    echo '<button class="btn waves-effect waves-light" type="submit" name="rejectConversion">Reject Conversion</button>';
-                    echo '</form>';
+                    echo "<td>";
+                      echo '<form action="changeConversionStatus.php" method="POST">';
+                      echo '<input hidden name="conversionID" type="text" value="' . $conversionID .'">';
+                      echo '<button class="btn waves-effect waves-light" type="submit" name="approveConversion">Approve Conversion</button>';
+                      echo '</form>';
+                      echo '<form action="changeConversionStatus.php" method="POST">';
+                      echo '<input hidden name="conversionID" type="text" value="' . $conversionID .'">';
+                      echo '<button class="btn waves-effect waves-light" type="submit" name="rejectConversion">Reject Conversion</button>';
+                      echo '</form>';
+                    echo "</td>";
                   echo "</tr>";
                 }
               } else {
