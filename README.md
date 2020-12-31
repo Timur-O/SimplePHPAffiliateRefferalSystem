@@ -26,12 +26,14 @@ A template for a affiliate/refferal system built with PHP and Materialize. There
                 - commissionBalance - FLOAT
                 - payoutEmail - TEXT
             - "conversions" table with the following columns:
+                - commissionID - INT (Primary Key)
                 - affiliate - INT (Foreign Key with affiliateID from Affiliates table)
                 - date - DATE
                 - type - TEXT
                 - commissionAmount - FLOAT
-                - approved - TINYINT (0 = false, NOT 0 = true)
+                - approved - TINYINT (0 = pending, 1 = approved, 2 = rejected)
             - "payouts" table with the following columns:
+                - payoutID - INT (Primary Key)
                 - affiliate - INT (foreign key with affiliateID from Affiliates table)
                 - date - DATE
                 - amount - FLOAT
@@ -45,7 +47,15 @@ A template for a affiliate/refferal system built with PHP and Materialize. There
     5. Make sure the password hashes in the database are generated with password_hash() with PHP
 
 2. The Admin Dashboard:
-    COMING SOON
+    1. The Files - I recommend putting the admin dashboard files into another folder such ad 'admin'. ie. website.tld/affiliate/admin = admin dashboard index page
+    2. Update the config.php file
+        1. Set the companyName variable to change the value in the footer
+        2. Change rootOfFiles variable if the files are not in the root (ie htdocs or www folder)
+        3. Change the currency variable to the currency you will be paying your affiliates in
+        4. Add your database information
+        5. Set the minimum withdrawal amount for your affiliates (this will only change how affiliate payouts are sorted)
+    3. Upload a favicon.png and logo.png into the images folder to change the favicon and the logo in the nav menu respectively
+    4. Make sure the password hashes in the database are generated with password_hash() with PHP
 
 3. The Snippets:
     COMING SOON

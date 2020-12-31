@@ -56,7 +56,7 @@ session_start();
         <div class="col m4 s12">
           <div class="card">
             <div class="card-content">
-              <span class="card-title">Commission Amount</span>
+              <span class="card-title">Commission Amount (Unpayed)</span>
               <h5><?php echo $currentCommissionValue;?></h5><p> <?php echo $currency?></p>
             </div>
           </div>
