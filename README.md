@@ -6,13 +6,11 @@ A template for a affiliate/refferal system built with PHP and Materialize. There
 3. Snippets - Snippets of code that need to be added to pages on your website to count refferals
 
 ## Features
----
 - An End-User Dashboard
 - A Management Dashboard
 - Completed snippets of code to integrate your existing website to this system
 
 ## Getting Started
----
 1. The User Dashboard:
     1. The Files - I recommend putting the user dashboard files into the root of the affiliates folder. ie. website.tld/affiliate = user dashboard index page
     2. The Database:
@@ -59,5 +57,4 @@ A template for a affiliate/refferal system built with PHP and Materialize. There
     COMING SOON
 
 ## Warning
----
 There are currently no fraud checks included in the system. I would recommend at least implementing a simple IP check to prevent fraud.
