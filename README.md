@@ -1,5 +1,3 @@
-This is a work in progress.
-
 # PHP & MaterializeCSS Affiliate/Refferal System
 ---
 A template for a affiliate/refferal system built with PHP and Materialize. There are three sections:
@@ -59,3 +57,7 @@ A template for a affiliate/refferal system built with PHP and Materialize. There
 
 3. The Snippets:
     COMING SOON
+
+## Warning
+---
+There are currently no fraud checks included in the system. I would recommend at least implementing a simple IP check to prevent fraud.
