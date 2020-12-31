@@ -1,0 +1,147 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main {
+  padding-left: 300px;
+  background-color: #f1f1f13d;
+  margin: 0 !important;
+  flex: 1 0 auto;
+}
+
+.loginmain {
+  background-color: #f1f1f13d;
+  margin: 0 !important;
+  flex: 1 0 auto;
+}
+
+.loginbox {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.sectionTitle {
+  margin-left: 2%; 
+}
+
+footer {
+  padding-left: 300px;
+  background-color: #f1f1f13d;
+}
+
+.footerlogin {
+  padding-left: 0px !important;
+}
+
+.rowtoppadded2 {
+  padding-top: 2%;
+}
+
+.rowtoppadded10 {
+  padding-top: 10%;
+}
+
+.rowbottompadded {
+  padding-bottom: 2% !important;
+}
+
+.paginator {
+  border-bottom: 0;
+}
+
+.padright {
+  padding-right: 2%;
+}
+
+.borderedbox {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.sidenav-trigger {
+  display: none;
+}
+
+.sidenav-trigger > i {
+  font-size: 3rem;
+}
+
+.card-link {
+  color: black;
+  text-decoration: none;
+}
+
+.assetImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  width: unset !important;
+}
+
+.card {
+  margin-right: 2% !important;
+}
+
+.footer {
+  margin-top: 2%;
+}
+
+.respon-table {
+  overflow-x:auto;
+}
+
+
+@media only screen and (max-width: 993px) {
+  .main {
+    padding-left: 0px;
+  }
+  .sidenav-trigger {
+    display: block;
+  }
+  footer {
+    padding-left: 0px;
+  }
+  .rowtoppadded {
+    padding-top: 0%;
+  }
+}
+
+/** Masonry **/
+
+.cards-container {
+  column-break-inside: avoid;
+}
+.cards-container .card {
+  display: inline-block;
+  overflow: visible;
+}
+
+@media only screen and (max-width: 600px) {
+  .cards-container {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+}
+@media only screen and (min-width: 601px) {
+  .cards-container {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+}
+@media only screen and (min-width: 993px) {
+  .cards-container {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+.text-center {
+  text-align: center;
+}
+
+/** Masonry End **/
