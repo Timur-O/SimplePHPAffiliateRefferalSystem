@@ -115,7 +115,7 @@ session_start();
                       echo '<li class="waves-effect"><a href="manageusers.php?' . addQueryToURL('page', 2) . '"><i class="material-icons">chevron_right</i></a></li>';
                     }
                     function addQueryToURL($query, $queryValue) {
-                      $url = "https://admin.ultifreehosting.com" . $_SERVER['REQUEST_URI'];
+                      $url = "//" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
                       $url_parts = parse_url($url);
                       if (isset($url_parts['query'])) {
                           parse_str($url_parts['query'], $params);
