@@ -53,8 +53,10 @@ session_start();
                     echo "<td>" . $commissionDate . "</td>";
                     echo "<td>" . $commissionType . "</td>";
                     echo "<td>" . $commissionAmount . " " . $currency . "</td>";
-                    if ($commissionApproved) {
+                    if ($commissionApproved == 1) {
                       echo "<td>Approved</td>";
+                    } else if ($commissionApproved == 2) {
+                      echo "<td>Rejected</td>";
                     } else {
                       echo "<td>Pending Approval</td>";
                     }
