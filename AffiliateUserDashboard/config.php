@@ -3,7 +3,7 @@
   $companyName = "YOUR COMPANY";
   // Root of the affiliate panel files
   // if in a folder called refferal or affiliates simply put "/refferal" or "/affiliates". if not in a folder then simply put "/".
-  $rootOfFiles = "";
+  $rootOfFiles = "/";
   echo "<script>rootOfFiles = '" . $rootOfFiles . "/'</script>"; // Don't Change
   // The currency you are paying your affiliate in
   $currency = 'USD';

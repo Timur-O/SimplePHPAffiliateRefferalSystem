@@ -40,7 +40,7 @@ session_start();
           <tbody>
             <?php
               if ($numberOfConversions > 0) {
-                $sql = "SELECT `date`, `type`, `commissionAmount`, `approved` FROM `{$conversionsTableName}` LIMIT 10 OFFSET {$offset}";
+                $sql = "SELECT `date`, `type`, `commissionAmount`, `approved` FROM `{$conversionsTableName}` WHERE `affiliate` = '{$_SESSION['userRefCode']}' LIMIT 10 OFFSET {$offset}";
                 $fullResult = $conn->query($sql);
                 
                 while ($row = $fullResult->fetch_assoc()) {
