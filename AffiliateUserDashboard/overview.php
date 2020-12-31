@@ -17,7 +17,7 @@ session_start();
       <?php
         include 'config.php';
         
-        $sql = "SELECT `clicks`, `conversions`, `commissionBalance` FROM `{$affiliateTableName}`";
+        $sql = "SELECT `clicks`, `conversions`, `commissionBalance` FROM `{$affiliateTableName}` WHERE `affiliateID` = '{$_SESSION['userRefCode']}'";
         $result = $conn->query($sql)->fetch_assoc();
         $numberOfClicks = $result['clicks'];
         $numberOfConversions = $result['conversions'];
@@ -27,7 +27,7 @@ session_start();
           $sql = "INSERT INTO  `{$affiliateTableName}` (`affiliateID`, `clicks`, `conversions`, `commissionBalance`) VALUES ({$_SESSION['userRefCode']}, 0, 0, 0)";
           $conn->query($sql);
 
-          $sql = "SELECT `clicks`, `conversions`, `commissionBalance` FROM `{$affiliateTableName}`";
+          $sql = "SELECT `clicks`, `conversions`, `commissionBalance` FROM `{$affiliateTableName}` WHERE `affiliateID` = '{$_SESSION['userRefCode']}'";
           $result = $conn->query($sql)->fetch_assoc();
           $numberOfClicks = $result['clicks'];
           $numberOfConversions = $result['conversions'];

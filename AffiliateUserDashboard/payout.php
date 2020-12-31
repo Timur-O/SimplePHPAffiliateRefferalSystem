@@ -17,7 +17,7 @@ session_start();
       <?php
         include 'config.php';
         
-        $sql = "SELECT `payoutEmail` FROM `{$affiliateTableName}`";
+        $sql = "SELECT `payoutEmail` FROM `{$affiliateTableName}` WHERE `affiliateID` = '{$_SESSION['userRefCode']}'";
         $result = $conn->query($sql)->fetch_assoc();
         $paypalEmail = $result['payoutEmail'];
         
