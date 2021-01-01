@@ -42,7 +42,7 @@ Important: You should have a $conn variable which connects to the database conta
         $sql = "UPDATE `{$affiliateTableName}` SET `conversions` =  `conversions` + 1 WHERE `affiliateID` = {$refferalCode}";
         $conn->query($sql);
 
-        $sql2 = "INSERT INTO  `{$conversionsTableName}` (`affiliate`, `date`, `type`, `commissionAmount`, `approved`) VALUES ({$refferalCode}, now(), {$conversionType}, '{$conversionValue}', 0)";
-        $conn->query($sql2);
+    $sql2 = "INSERT INTO  `{$conversionsTableName}` (`affiliate`, `date`, `type`, `commissionAmount`, `approved`) VALUES ({$refferalCode}, now(), '{$conversionType}', {$conversionValue}, 0)";
+    $conn->query($sql2);
     }
 ```

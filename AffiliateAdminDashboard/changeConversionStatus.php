@@ -7,9 +7,9 @@ if (isset($_POST['approveConversion']) && isset($_SESSION['userRefCode'])) {
 
     $sql2 = "SELECT `commissionAmount` FROM `{$conversionsTableName}` WHERE  `conversionID` = {$_POST['conversionID']}";
     $result = $conn->query($sql2)->fetch_assoc();
-    $commissionAmount = $result['commissionAmount '];
+    $commissionAmount = $result['commissionAmount'];
 
-    $sql3 = "UPDATE `{$affiliatesTableName}` SET `commissionBalance ` =  `commissionBalance ` + {$commissionAmount} WHERE `affiliateID` = {$_SESSION['userRefCode']}";
+    $sql3 = "UPDATE `{$affiliateTableName}` SET `commissionBalance` =  `commissionBalance` + {$commissionAmount} WHERE `affiliateID` = {$_POST['affiliateID']}";
     $result = $conn->query($sql3);
 
     header("Location: conversions.php");

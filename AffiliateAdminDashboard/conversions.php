@@ -37,6 +37,7 @@ session_start();
         <table id="userstable" class="col s10 offset-s1 centered">
           <thead>
             <th>Date</th>
+            <th>Affiliate</th>
             <th>Type</th>
             <th>Commission Amount</th>
             <th>Approved</th>
@@ -45,7 +46,7 @@ session_start();
           <tbody>
             <?php
               if ($numberOfConversions > 0) {
-                $sql = "SELECT `conversionID`, `date`, `type`, `commissionAmount`, `approved` FROM `{$conversionsTableName}` LIMIT 10 OFFSET {$offset}";
+                $sql = "SELECT `conversionID`, `affiliate`, `date`, `type`, `commissionAmount`, `approved` FROM `{$conversionsTableName}` LIMIT 10 OFFSET {$offset}";
                 $fullResult = $conn->query($sql);
                 
                 while ($row = $fullResult->fetch_assoc()) {
@@ -54,9 +55,11 @@ session_start();
                   $commissionType = $row['type'];
                   $commissionAmount = $row['commissionAmount'];
                   $commissionApproved = $row['approved'];
+                  $commissionAffiliate = $row['affiliate'];
 
                   echo "<tr>";
                     echo "<td>" . $commissionDate . "</td>";
+                    echo "<td>" . $commissionAffiliate . "</td>";
                     echo "<td>" . $commissionType . "</td>";
                     echo "<td>" . $commissionAmount . " " . $currency . "</td>";
                     if ($commissionApproved == 1) {
@@ -69,6 +72,7 @@ session_start();
                     echo "<td>";
                       echo '<form action="changeConversionStatus.php" method="POST" class="formActionButton">';
                       echo '<input hidden name="conversionID" type="text" value="' . $commissionID .'">';
+                      echo '<input hidden name="affiliateID" type="text" value="' . $commissionAffiliate .'">';
                       echo '<button class="btn waves-effect waves-light" type="submit" name="approveConversion">Approve Conversion</button>';
                       echo '</form>';
                       echo '<form action="changeConversionStatus.php" method="POST" class="formActionButton">';
