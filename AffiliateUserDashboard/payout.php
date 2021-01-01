@@ -49,8 +49,12 @@ session_start();
           $offset = 0;
         }
       ?>
-      
+
       <div class="row respon-table">
+      <div class="col s10 offset-s1">
+          <h5 class="center">Your Payout History</h5>
+          <hr>
+        </div>
         <table id="userstable" class="col s10 offset-s1 centered">
           <thead>
             <th>Date</th>

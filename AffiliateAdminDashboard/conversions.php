@@ -30,6 +30,10 @@ session_start();
       ?>
       
       <div class="row respon-table">
+        <div class="col s10 offset-s1">
+          <h5 class="center">All Conversions</h5>
+          <hr>
+        </div>
         <table id="userstable" class="col s10 offset-s1 centered">
           <thead>
             <th>Date</th>
@@ -45,11 +49,11 @@ session_start();
                 $fullResult = $conn->query($sql);
                 
                 while ($row = $fullResult->fetch_assoc()) {
+                  $commissionID = $row['conversionID'];
                   $commissionDate = $row['date'];
                   $commissionType = $row['type'];
                   $commissionAmount = $row['commissionAmount'];
                   $commissionApproved = $row['approved'];
-                  $commissionID = $row['conversionID'];
 
                   echo "<tr>";
                     echo "<td>" . $commissionDate . "</td>";
@@ -63,12 +67,12 @@ session_start();
                       echo "<td>Pending Approval</td>";
                     }
                     echo "<td>";
-                      echo '<form action="changeConversionStatus.php" method="POST">';
-                      echo '<input hidden name="conversionID" type="text" value="' . $conversionID .'">';
+                      echo '<form action="changeConversionStatus.php" method="POST" class="formActionButton">';
+                      echo '<input hidden name="conversionID" type="text" value="' . $commissionID .'">';
                       echo '<button class="btn waves-effect waves-light" type="submit" name="approveConversion">Approve Conversion</button>';
                       echo '</form>';
-                      echo '<form action="changeConversionStatus.php" method="POST">';
-                      echo '<input hidden name="conversionID" type="text" value="' . $conversionID .'">';
+                      echo '<form action="changeConversionStatus.php" method="POST" class="formActionButton">';
+                      echo '<input hidden name="conversionID" type="text" value="' . $commissionID .'">';
                       echo '<button class="btn waves-effect waves-light" type="submit" name="rejectConversion">Reject Conversion</button>';
                       echo '</form>';
                     echo "</td>";

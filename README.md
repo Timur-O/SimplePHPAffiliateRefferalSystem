@@ -33,6 +33,7 @@ A template for a affiliate/refferal system built with PHP and Materialize. There
                 - affiliate - INT (foreign key with affiliateID from Affiliates table)
                 - date - DATE
                 - amount - FLOAT
+                - email - TEXT
     3. Update the config.php file
         1. Set the companyName variable to change the value in the footer
         2. Change rootOfFiles variable if the files are not in the root (ie htdocs or www folder)

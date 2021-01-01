@@ -28,8 +28,12 @@ session_start();
           $offset = 0;
         }
       ?>
-      
+
       <div class="row respon-table">
+        <div class="col s10 offset-s1">
+          <h5 class="center">Your Conversions</h5>
+          <hr>
+        </div>
         <table id="userstable" class="col s10 offset-s1 centered">
           <thead>
             <th>Date</th>
@@ -54,9 +58,9 @@ session_start();
                     echo "<td>" . $commissionType . "</td>";
                     echo "<td>" . $commissionAmount . " " . $currency . "</td>";
                     if ($commissionApproved == 1) {
-                      echo "<td>Approved</td>";
+                      echo "<td class='green-text'>Approved</td>";
                     } else if ($commissionApproved == 2) {
-                      echo "<td>Rejected</td>";
+                      echo "<td class='red-text'>Rejected</td>";
                     } else {
                       echo "<td>Pending Approval</td>";
                     }

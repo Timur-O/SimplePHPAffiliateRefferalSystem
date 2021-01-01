@@ -30,12 +30,12 @@ session_start();
           $offset = 0;
         }
       ?>
-      
-      <div class="row">
-        <h3>Pending Payouts</h3>
-      </div>
 
       <div class="row respon-table">
+        <div class="col s10 offset-s1">
+          <h5 class="center">Pending Payouts (With Balance Above <?php echo $minPayoutAmount . " " . $currency; ?>)</h5>
+          <hr>
+        </div>
         <table id="userstable" class="col s10 offset-s1 centered">
           <thead>
             <th>Payout Email</th>
@@ -45,20 +45,20 @@ session_start();
           <tbody>
           <?php
             if ($numberOfPayouts > 0) {
-              $sql = "SELECT `payoutID`, `payoutEmail`, `commissionBalance` FROM `{$affiliateTableName}` WHERE  `commissionBalance` > {$minPayoutAmount} LIMIT 10 OFFSET {$offset}";
+              $sql = "SELECT `affiliateID`, `payoutEmail`, `commissionBalance` FROM `{$affiliateTableName}` WHERE  `commissionBalance` >= {$minPayoutAmount} LIMIT 10 OFFSET {$offset}";
               $fullResult = $conn->query($sql);
               while ($row = $fullResult->fetch_assoc()) {
-                $payoutID = $row['payoutID'];
                 $payoutEmail = $row['payoutEmail'];
                 $payoutAmount = $row['commissionBalance'];
+                $affiliateID = $row['affiliateID'];
 
                 echo "<tr>";
                   echo "<td>" . $payoutEmail . "</td>";
                   echo "<td>" . $payoutAmount . "</td>";
                   echo "<td>";
                     echo '<form action="payPendingPayout.php" method="POST">';
-                    echo '<input hidden name="payoutID" type="text" value="' . $payoutID .'">';
                     echo '<input hidden name="payoutAmount" type="text" value="' . $payoutAmount .'">';
+                    echo '<input hidden name="affiliateID" type="text" value="' . $affiliateID .'">';
                     echo '<button class="btn waves-effect waves-light" type="submit" name="markPaid">Mark as Paid</button>';
                     echo '</form>';
                   echo "</td>";
@@ -116,8 +116,6 @@ session_start();
         </table>
       </div>
 
-    // SHOW THOSE WHICH HAVE PENDING COMMISSION ie. commissionBal > minPayout Seperate Table
-
     <?php
         $sql = "SELECT COUNT(*) as 'num' FROM `{$payoutsTableName}`";
         $result = $conn->query($sql)->fetch_assoc();
@@ -130,29 +128,32 @@ session_start();
           $offset = 0;
         }
       ?>
-      
-      <div class="row">
-        <h3>Payout History</h3>
-      </div>
 
       <div class="row respon-table">
+        <div class="col s10 offset-s1">
+          <h5 class="center">Payout History</h5>
+          <hr>
+        </div>
         <table id="userstable" class="col s10 offset-s1 centered">
           <thead>
             <th>Date</th>
             <th>Amount</th>
+            <th>Paypal Email</th>
           </thead>
           <tbody>
           <?php
             if ($numberOfPayouts > 0) {
-              $sql = "SELECT `date`, `amount` FROM `{$payoutsTableName}` LIMIT 10 OFFSET {$offset}";
+              $sql = "SELECT `date`, `amount`, `email` FROM `{$payoutsTableName}` LIMIT 10 OFFSET {$offset}";
               $fullResult = $conn->query($sql);
               while ($row = $fullResult->fetch_assoc()) {
                 $payoutDate = $row['date'];
                 $payoutAmount = $row['amount'];
+                $payoutEmail = $row['email'];
 
                 echo "<tr>";
                   echo "<td>" . $payoutDate . "</td>";
                   echo "<td>" . $payoutAmount . "</td>";
+                  echo "<td>" . $payoutEmail . "</td>";
                 echo "</tr>";
               }
             } else {

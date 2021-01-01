@@ -93,6 +93,10 @@ footer {
   overflow-x:auto;
 }
 
+.formActionButton {
+  margin-bottom: 2%;
+}
+
 
 @media only screen and (max-width: 993px) {
   .main {

@@ -17,21 +17,23 @@ session_start();
       <?php
         include 'config.php';
         
-        $sql = "SELECT SUM(`clicks`) AS 'totalClicks' FROM `{$affiliateTableName}`";
-        $result = $conn->query($sql)->fetch_assoc();
-        $numberOfClicks = $result['totalClicks'];
+        $sql = "SELECT SUM(clicks) AS 'totalClicks' FROM `{$affiliateTableName}`";
+        $resultClicks = $conn->query($sql)->fetch_assoc();
+        $numberOfClicks = $resultClicks['totalClicks'];
 
-        $sql = "SELECT COUNT(*) as 'num' FROM `{$conversionsTableName}`";
-        $result = $conn->query($sql)->fetch_assoc();
-        $numberOfConversions = $result['num'];
+        $sql2 = "SELECT COUNT(*) AS 'num' FROM `{$conversionsTableName}`";
+        $resultConversions = $conn->query($sql2)->fetch_assoc();
+        $numberOfConversions = $resultConversions['num'];
         
-        $sql = "SELECT SUM(`commissionBalance`) AS 'totalCommissions' FROM `{$affiliateTableName}`";
-        $result = $conn->query($sql)->fetch_assoc();
-        $totalCommissionValue = $result['totalCommissions'];
+        $sql3 = "SELECT SUM(`commissionBalance`) AS 'totalCommissions' FROM `{$affiliateTableName}`";
+        $resultTotalCommission = $conn->query($sql3)->fetch_assoc();
+        $totalCommissionValue = $resultTotalCommission['totalCommissions'];
+        $totalCommissionValue = number_format((float)$totalCommissionValue, 2, '.', '');
 
-        $sql = "SELECT SUM(`commissionBalance`) AS 'totalCommissions' FROM `{$affiliateTableName}` WHERE `commissionBalance` > {$minPayoutAmount}";
-        $result = $conn->query($sql)->fetch_assoc();
-        $totalCommissionValue = $result['totalCommissions'];
+        $sql4 = "SELECT SUM(`commissionBalance`) AS 'totalCommissions' FROM `{$affiliateTableName}` WHERE `commissionBalance` > {$minPayoutAmount}";
+        $resultPayableCommission = $conn->query($sql4)->fetch_assoc();
+        $payableCommissionValue = $resultPayableCommission['totalCommissions'];
+        $payableCommissionValue = number_format((float)$payableCommissionValue, 2, '.', '');
 
         if (is_null($resultClicks)) {
           $numberOfClicks = 0;
@@ -52,7 +54,7 @@ session_start();
       ?>
 
       <div class="row rowtoppadded2">
-        <div class="col m3 s12">
+        <div class="col m6 s12">
           <div class="card">
             <div class="card-content">
               <span class="card-title">Total Clicks</span>
@@ -60,7 +62,7 @@ session_start();
             </div>
           </div>
         </div>
-        <div class="col m3 s12">
+        <div class="col m6 s12">
           <div class="card">
             <div class="card-content">
               <span class="card-title">Total Conversions</span>
@@ -68,18 +70,18 @@ session_start();
             </div>
           </div>
         </div>
-        <div class="col m3 s12">
+        <div class="col m6 s12">
           <div class="card">
             <div class="card-content">
-              <span class="card-title">Total Commission Amount</span>
+              <span class="card-title">Total Earned By Affiliates</span>
               <h5><?php echo $totalCommissionValue;?></h5><p> <?php echo $currency?></p>
             </div>
           </div>
         </div>
-        <div class="col m3 s12">
+        <div class="col m6 s12">
           <div class="card">
             <div class="card-content">
-              <span class="card-title">Total Commission Amount</span>
+              <span class="card-title">Total Earned By Affiliates (With Balance Above <?php echo $minPayoutAmount . " " . $currency; ?>)</span>
               <h5><?php echo $payableCommissionValue;?></h5><p> <?php echo $currency?></p>
             </div>
           </div>
