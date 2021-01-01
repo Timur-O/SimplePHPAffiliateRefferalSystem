@@ -55,7 +55,8 @@ A template for a affiliate/refferal system built with PHP and Materialize. There
     4. Make sure the password hashes in the database are generated with password_hash() with PHP
 
 3. The Snippets:
-    COMING SOON
+    1. Open the snippets folder on github, or download it, although the formatting will vanish locally
+    2. Paste the snippets of code into the correct files as mentioned in the snippets.md file
 
 ## Warning
-There are currently no fraud checks included in the system. I would recommend at least implementing a simple IP check to prevent fraud.
+There are currently no fraud checks included in the system. I would recommend at least implementing a simple IP check to prevent fraud. If you do code a fraud check, feel free to create a pull request or issue to include the code in this repository.
