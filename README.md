@@ -22,14 +22,14 @@ A template for a affiliate/refferal system built with PHP and Materialize. There
                 - commissionBalance - FLOAT
                 - payoutEmail - TEXT
             - "conversions" table with the following columns:
-                - commissionID - INT (Primary Key)
+                - commissionID - INT (Primary Key + Auto Increment)
                 - affiliate - INT (Foreign Key with affiliateID from Affiliates table)
                 - date - DATE
                 - type - TEXT
                 - commissionAmount - FLOAT
                 - approved - TINYINT (0 = pending, 1 = approved, 2 = rejected)
             - "payouts" table with the following columns:
-                - payoutID - INT (Primary Key)
+                - payoutID - INT (Primary Key + Auto Increment)
                 - affiliate - INT (foreign key with affiliateID from Affiliates table)
                 - date - DATE
                 - amount - FLOAT
