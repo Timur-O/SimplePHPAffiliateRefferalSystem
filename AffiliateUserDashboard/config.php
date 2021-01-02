@@ -9,6 +9,8 @@
   $currency = 'USD';
   // The website your affiliates are reffering users to
   $websiteURL = 'https://www.yourwebsite.com/'; // IMPORTANT - The trailing slash must be included
+  // The full URL of your affiliate terms of service
+  $affiliateTOSLink = 'https://www.website.com/legal/tos';
   
   // Add your database information for the login system
   $servername = "sql.yourdomain.tld";
